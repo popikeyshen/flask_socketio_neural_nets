@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<link
+			href="http://html5-demos.appspot.com/static/common.css"
+			rel="stylesheet"
+			type="text/css"
+			media="all"
+		/>
+		<link
+			href="{{ url_for('static', filename='style.css') }}"
+			rel="stylesheet"
+			type="text/css"
+			media="all"
+		/>
+		<title>Get video from getUserMedia(), then livestream</title>
+	</head>
+	<body>
+		<h2>Get video from <code>getUserMedia()</code>, then livestream.</h2>
+
+		<section>
+			<div style="float:left;">
+				<button id="camera-me">1. Turn on camera</button>
+				<h4><code>getUserMedia()</code> feed</h4>
+				<video autoplay></video>
+				<img id="img" height="150" width="150"/>
+			</div>
+			<div id="video-preview">
+				<button id="record-me" disabled>Go Live</button>
+				<button id="stop-me" disabled>◼</button>
+				<span id="elasped-time"></span>
+				<h4>live video</h4>
+			</div>
+		</section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+		<script src="{{ url_for('static', filename='script.js') }}"></script>
+	</body>
+</html>
